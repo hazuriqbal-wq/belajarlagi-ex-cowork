@@ -1,0 +1,26 @@
+SOP Singkat Onboarding Peserta Workshop
+
+H-7:
+- Kirim email konfirmasi kelas.
+- Kirim pre-read material.
+- Pastikan peserta mengetahui tools yang dibutuhkan.
+
+H-3:
+- Kirim reminder kelas.
+- Kirim link meeting.
+- Kirim checklist persiapan peserta.
+
+H-1:
+- Kirim reminder terakhir.
+- Pastikan folder demo tersedia untuk instruktur.
+- Pastikan backup screenshot/demo video siap.
+
+Hari-H:
+- Instruktur hadir 30 menit lebih awal.
+- Cek audio, screen sharing, dan koneksi internet.
+- Teaching assistant memantau chat peserta.
+
+Post-class:
+- Kirim recording jika tersedia.
+- Kirim materi tambahan.
+- Kumpulkan feedback peserta.

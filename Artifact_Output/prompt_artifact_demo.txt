@@ -1,0 +1,13 @@
+Bertindaklah sebagai training operations assistant.
+
+Gunakan class_preparation_notes.txt, onboarding_sop.txt, dan participant_schedule.csv.
+
+Buat artifact yang bisa langsung dipakai untuk persiapan kelas:
+1. Checklist persiapan kelas
+2. Tabel PIC dan deadline
+3. Template pesan reminder peserta H-3 dan H-1
+4. Summary singkat untuk tim internal
+
+Gunakan bahasa Indonesia yang jelas dan profesional.
+Buat dalam format yang rapi dan mudah dicopy ke dokumen kerja.
+Tampilkan rencana kerja terlebih dahulu sebelum membuat output final.

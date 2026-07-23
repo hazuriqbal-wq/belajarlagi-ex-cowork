@@ -1,0 +1,20 @@
+Expected folder plan:
+
+01_Meeting_Notes/
+02_Data/
+03_Slide_Outlines/
+04_Reports/
+05_Checklists/
+06_Assets/
+99_Archive/
+
+Potential duplicates:
+- meeting_final_v2_FIX.txt
+- MEETING notes june 12 copy.txt
+
+Potential archive:
+- draft_report_old.txt
+- old_archive/*
+
+Key teaching point:
+File cleanup should begin with a proposal, not immediate action.

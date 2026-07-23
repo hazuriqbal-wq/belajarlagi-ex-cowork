@@ -1,0 +1,1 @@
+Placeholder for screenshot note. Should probably go to assets folder.

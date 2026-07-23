@@ -1,0 +1,14 @@
+Bertindaklah sebagai sales operations assistant.
+
+Gunakan file sales_week_24.csv, sales_week_25.csv, dan weekly_issue_notes.txt.
+
+Buat draft weekly sales summary untuk manager.
+Tampilkan:
+1. Ringkasan performa minggu ini
+2. Perbandingan dengan minggu sebelumnya
+3. Region atau produk yang perlu perhatian
+4. Risiko utama
+5. Next step minggu depan
+
+Gunakan format singkat, jelas, dan profesional.
+Jangan mengirim summary ke siapa pun. Hanya buat draft untuk direview.

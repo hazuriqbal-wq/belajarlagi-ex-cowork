@@ -1,0 +1,24 @@
+Expected artifact structure:
+
+A. Checklist Persiapan Kelas
+- Task
+- Owner
+- Deadline
+- Status
+- Notes
+
+B. Tabel PIC dan Deadline
+- Activity
+- PIC
+- Due date
+- Risk
+
+C. Template Reminder Peserta
+- H-3 reminder
+- H-1 reminder
+
+D. Internal Summary
+- Class goal
+- Key preparation items
+- Risks
+- Required support

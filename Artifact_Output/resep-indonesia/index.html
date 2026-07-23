@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dapur Nusantara — Resep Masakan Indonesia</title>
+  <style>
+    :root {
+      --merah: #c0392b;
+      --merah-tua: #96281b;
+      --emas: #f39c12;
+      --emas-muda: #fef9ee;
+      --hijau: #27ae60;
+      --putih: #ffffff;
+      --abu-muda: #f5f5f0;
+      --abu: #888;
+      --teks: #2c2c2c;
+      --bayangan: 0 4px 20px rgba(0,0,0,0.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--abu-muda);
+      color: var(--teks);
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--merah) 0%, var(--merah-tua) 100%);
+      color: var(--putih);
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 1rem;
+    }
+    .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: inherit; }
+    .logo-icon { font-size: 1.8rem; }
+    .logo-text { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.3px; }
+    .logo-sub { font-size: 0.7rem; opacity: 0.8; font-weight: 400; display: block; margin-top: -2px; }
+
+    .header-search {
+      flex: 1;
+      max-width: 400px;
+      position: relative;
+    }
+    .header-search input {
+      width: 100%;
+      padding: 0.5rem 1rem 0.5rem 2.8rem;
+      border-radius: 999px;
+      border: none;
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+      font-size: 0.9rem;
+      outline: none;
+      transition: background 0.2s;
+    }
+    .header-search input::placeholder { color: rgba(255,255,255,0.65); }
+    .header-search input:focus { background: rgba(255,255,255,0.28); }
+    .header-search .icon {
+      position: absolute;
+      left: 0.9rem;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    nav { display: flex; gap: 1.5rem; }
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    nav a:hover, nav a.aktif { color: #fff; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(160deg, #fff7ee 0%, #fdebd0 100%);
+      border-bottom: 1px solid #f0e0c8;
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--merah-tua);
+      line-height: 1.15;
+    }
+    .hero p {
+      margin-top: 0.8rem;
+      color: #7a5230;
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-top: 1.8rem;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.6rem; font-weight: 800; color: var(--merah); }
+    .stat-label { font-size: 0.78rem; color: #7a5230; margin-top: 2px; }
+
+    /* ── Filter / kategori ── */
+    .filter-bar {
+      max-width: 1200px;
+      margin: 1.8rem auto 0;
+      padding: 0 2rem;
+    }
+    .filter-scroll {
+      display: flex;
+      gap: 0.6rem;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .filter-scroll::-webkit-scrollbar { display: none; }
+    .chip {
+      flex-shrink: 0;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      border: 1.5px solid #ddd;
+      background: #fff;
+      font-size: 0.83rem;
+      cursor: pointer;
+      transition: all 0.18s;
+      white-space: nowrap;
+      color: #555;
+    }
+    .chip:hover { border-color: var(--merah); color: var(--merah); }
+    .chip.aktif { background: var(--merah); border-color: var(--merah); color: #fff; font-weight: 600; }
+
+    /* ── Grid resep ── */
+    .grid-section {
+      max-width: 1200px;
+      margin: 1.6rem auto 4rem;
+      padding: 0 2rem;
+    }
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--teks);
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--bayangan);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.14); }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: linear-gradient(135deg, #f5e6d0, #ebd5b5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      position: relative;
+    }
+    .card-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: var(--emas);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .card-fav {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+      transition: transform 0.15s;
+      background: none;
+      border: none;
+    }
+    .card-fav:hover { transform: scale(1.2); }
+
+    .card-body { padding: 1rem 1.1rem 1.2rem; flex: 1; display: flex; flex-direction: column; }
+    .card-region { font-size: 0.72rem; color: var(--merah); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .card-title { font-size: 1.05rem; font-weight: 700; margin-top: 2px; color: var(--teks); line-height: 1.3; }
+    .card-desc { font-size: 0.82rem; color: #777; margin-top: 0.4rem; line-height: 1.5; flex: 1; }
+
+    .card-meta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.9rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #f0f0f0;
+      font-size: 0.78rem;
+      color: #888;
+    }
+    .meta-item { display: flex; align-items: center; gap: 4px; }
+
+    .card-footer {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.9rem;
+    }
+    .btn-lihat {
+      flex: 1;
+      padding: 0.5rem;
+      background: var(--merah);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-lihat:hover { background: var(--merah-tua); }
+    .btn-share {
+      padding: 0.5rem 0.8rem;
+      border: 1.5px solid #e0e0e0;
+      background: #fff;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .btn-share:hover { border-color: var(--merah); }
+
+    /* ── Modal ── */
+    .overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .overlay.buka { display: flex; }
+
+    .modal {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 700px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: naik 0.25s ease;
+    }
+    @keyframes naik { from { transform: translateY(30px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+    .modal-header {
+      padding: 1.4rem 1.6rem 1rem;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .modal-emoji { font-size: 3rem; line-height: 1; }
+    .modal-meta { flex: 1; }
+    .modal-region { font-size: 0.75rem; color: var(--merah); font-weight: 700; text-transform: uppercase; }
+    .modal-title { font-size: 1.5rem; font-weight: 800; color: var(--teks); line-height: 1.2; }
+    .modal-desc { font-size: 0.88rem; color: #666; margin-top: 0.4rem; }
+    .modal-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.7rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      background: var(--abu-muda);
+      color: #555;
+    }
+    .badge.merah { background: #fff0f0; color: var(--merah); }
+    .badge.hijau { background: #f0fff5; color: var(--hijau); }
+    .badge.emas { background: #fff8ec; color: #c87a00; }
+
+    .btn-tutup {
+      background: none; border: none; font-size: 1.4rem;
+      cursor: pointer; color: #aaa; padding: 4px;
+      transition: color 0.15s; flex-shrink: 0;
+    }
+    .btn-tutup:hover { color: var(--merah); }
+
+    .modal-body { padding: 1.4rem 1.6rem; }
+
+    .dua-kolom { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media(max-width: 560px) { .dua-kolom { grid-template-columns: 1fr; } }
+
+    .modal-section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--teks);
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .bahan-list { list-style: none; }
+    .bahan-list li {
+      padding: 0.35rem 0;
+      font-size: 0.85rem;
+      color: #555;
+      border-bottom: 1px dashed #f0f0f0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .bahan-list li:last-child { border-bottom: none; }
+    .bahan-list li::before { content: '•'; color: var(--emas); font-size: 1rem; flex-shrink: 0; }
+
+    .langkah-list { list-style: none; counter-reset: langkah; }
+    .langkah-list li {
+      counter-increment: langkah;
+      padding: 0.6rem 0 0.6rem 2.6rem;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.55;
+      border-bottom: 1px solid #f5f5f5;
+      position: relative;
+    }
+    .langkah-list li:last-child { border-bottom: none; }
+    .langkah-list li::before {
+      content: counter(langkah);
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      background: var(--merah);
+      color: #fff;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .tips-box {
+      background: var(--emas-muda);
+      border: 1px solid #f5d78e;
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      margin-top: 1.2rem;
+      font-size: 0.83rem;
+      color: #7a5c00;
+      line-height: 1.5;
+    }
+    .tips-box strong { color: #c87a00; }
+
+    /* ── Empty state ── */
+    .kosong {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #aaa;
+      display: none;
+    }
+    .kosong-icon { font-size: 3rem; margin-bottom: 0.8rem; }
+    .kosong p { font-size: 0.9rem; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--merah-tua);
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.82rem;
+    }
+    footer strong { color: #fff; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .hero-stats { gap: 1.5rem; }
+      nav { display: none; }
+      .header-search { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <span class="logo-icon">🍲</span>
+      <span class="logo-text">Dapur Nusantara <span class="logo-sub">Resep Masakan Indonesia</span></span>
+    </a>
+    <div class="header-search">
+      <span class="icon">🔍</span>
+      <input type="text" id="inputCari" placeholder="Cari resep…" oninput="cariResep()" />
+    </div>
+    <nav>
+      <a href="#" class="aktif">Beranda</a>
+      <a href="#">Favorit</a>
+      <a href="#">Tentang</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Warisan Rasa Nusantara 🇮🇩</h1>
+  <p>Temukan, masak, dan bagikan resep-resep autentik dari seluruh penjuru Indonesia.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num" id="jmlResep">0</div><div class="stat-label">Resep</div></div>
+    <div class="stat"><div class="stat-num">34</div><div class="stat-label">Provinsi</div></div>
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Pengguna</div></div>
+  </div>
+</section>
+
+<!-- Filter -->
+<div class="filter-bar">
+  <div class="filter-scroll" id="filterBar"></div>
+</div>
+
+<!-- Grid -->
+<div class="grid-section">
+  <div class="section-title" id="sectionTitle">🍛 Semua Resep</div>
+  <div class="grid" id="gridResep"></div>
+  <div class="kosong" id="kosong">
+    <div class="kosong-icon">🫙</div>
+    <p>Resep tidak ditemukan.<br>Coba kata kunci lain.</p>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="overlay" id="overlay" onclick="tutupModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-emoji" id="mEmoji"></div>
+      <div class="modal-meta">
+        <div class="modal-region" id="mRegion"></div>
+        <div class="modal-title" id="mTitle"></div>
+        <div class="modal-desc" id="mDesc"></div>
+        <div class="modal-badges" id="mBadges"></div>
+      </div>
+      <button class="btn-tutup" onclick="tutupModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="dua-kolom">
+        <div>
+          <div class="modal-section-title">🧂 Bahan-bahan</div>
+          <ul class="bahan-list" id="mBahan"></ul>
+        </div>
+        <div>
+          <div class="modal-section-title">👨‍🍳 Cara Membuat</div>
+          <ol class="langkah-list" id="mLangkah"></ol>
+        </div>
+      </div>
+      <div class="tips-box" id="mTips"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Dibuat dengan ❤️ untuk melestarikan <strong>kekayaan kuliner Indonesia</strong> · Dapur Nusantara 2025
+</footer>
+
+<script>
+const DATA_RESEP = [
+  {
+    id: 1, emoji: '🍲', nama: 'Rendang Sapi',
+    asal: 'Sumatera Barat', kategori: 'Daging',
+    waktu: '3 jam', porsi: '6 porsi', tingkat: 'Menengah',
+    deskripsi: 'Masakan daging sapi berbumbu rempah yang dimasak dalam santan hingga kering dan kaya rasa. Salah satu masakan terlezat di dunia.',
+    bahan: [
+      '1 kg daging sapi, potong dadu 4 cm',
+      '1 liter santan kental',
+      '4 lembar daun jeruk', '2 batang serai, memarkan',
+      '3 lembar daun salam', '2 ruas lengkuas, memarkan',
+      'Bumbu halus: 12 cabai merah, 8 bawang merah, 5 bawang putih, 3 cm jahe, 2 cm kunyit, 3 cm galangal',
+      'Garam dan gula secukupnya'
+    ],
+    langkah: [
+      'Haluskan semua bumbu halus menggunakan blender atau ulekan.',
+      'Tumis bumbu halus bersama serai, daun jeruk, dan daun salam hingga harum.',
+      'Masukkan daging sapi, aduk hingga daging berubah warna.',
+      'Tuang santan kental, masak dengan api sedang sambil sesekali diaduk.',
+      'Kecilkan api saat santan mulai mengental, terus masak sambil diaduk agar tidak lengket.',
+      'Masak selama ±3 jam hingga santan mengering dan daging berwarna coklat kehitaman.',
+      'Koreksi rasa, angkat, dan sajikan dengan nasi putih hangat.'
+    ],
+    tips: '💡 Tips: Gunakan santan segar untuk hasil terbaik. Rendang semakin enak jika dipanaskan kembali keesokan harinya karena bumbu semakin meresap.',
+    populer: true
+  },
+  {
+    id: 2, emoji: '🥣', nama: 'Soto Ayam Lamongan',
+    asal: 'Jawa Timur', kategori: 'Sup',
+    waktu: '1,5 jam', porsi: '4 porsi', tingkat: 'Mudah',
+    deskripsi: 'Soto berkuah kuning bening dengan ayam suwir, koya, dan perasan jeruk nipis yang segar.',
+    bahan: [
+      '1 ekor ayam kampung, potong 4 bagian',
+      '2 liter air', '4 lembar daun jeruk',
+      '2 batang serai', '3 cm lengkuas',
+      'Bumbu halus: 6 bawang merah, 4 bawang putih, 3 cm kunyit, 2 cm jahe, 3 kemiri sangrai',
+      'Koya: kerupuk udang + bawang putih goreng (haluskan)',
+      'Pelengkap: tauge, mi bihun, telur rebus, irisan daun bawang, perasan jeruk nipis'
+    ],
+    langkah: [
+      'Rebus ayam bersama serai, daun jeruk, dan lengkuas hingga empuk.',
+      'Angkat ayam, suwir dagingnya. Saring kaldu ayam.',
+      'Tumis bumbu halus hingga harum, masukkan ke dalam kaldu.',
+      'Masak kuah bersama bumbu dengan api sedang selama 15 menit.',
+      'Siapkan mangkuk: beri bihun, tauge, suwiran ayam, telur rebus.',
+      'Tuang kuah panas di atas isian.',
+      'Taburi koya, bawang goreng, dan perasan jeruk nipis sebelum disajikan.'
+    ],
+    tips: '💡 Tips: Rahasia soto Lamongan ada di koyanya! Buat koya dari kerupuk udang yang digoreng lalu dihaluskan bersama bawang putih goreng.',
+    populer: true
+  },
+  {
+    id: 3, emoji: '🌶️', nama: 'Ayam Betutu Bali',
+    asal: 'Bali', kategori: 'Unggas',
+    waktu: '5 jam', porsi: '4 porsi', tingkat: 'Sulit',
+    deskripsi: 'Ayam utuh berbumbu base genep khas Bali yang dibungkus daun pisang dan dipanggang perlahan.',
+    bahan: [
+      '1 ekor ayam utuh (±1,5 kg)',
+      'Daun pisang untuk membungkus',
+      'Base genep: 15 cabai merah, 8 bawang merah, 6 bawang putih, 3 cm jahe, 3 cm kunyit, 3 cm kencur, 2 cm laos, 2 cm lengkuas',
+      'Rempah: 3 lembar daun salam, 2 batang serai, 5 lembar daun jeruk',
+      '3 sdm minyak kelapa', 'Garam, terasi bakar secukupnya'
+    ],
+    langkah: [
+      'Haluskan semua bahan base genep, tumis dengan minyak kelapa hingga matang dan harum.',
+      'Lumuri ayam dengan bumbu, masukkan juga sebagian bumbu ke dalam rongga ayam.',
+      'Diamkan minimal 2 jam atau semalaman di kulkas agar bumbu meresap.',
+      'Bungkus ayam dengan daun pisang, ikat dengan tali.',
+      'Kukus selama 2 jam hingga ayam matang.',
+      'Kemudian panggang dalam oven 180°C selama 45 menit hingga sedikit kecoklatan.',
+      'Sajikan dengan nasi putih, lawar, dan sambal matah.'
+    ],
+    tips: '💡 Tips: Proses pengukusan sebelum dipanggang adalah kunci ayam betutu yang empuk dan bumbu meresap sempurna. Jangan dilewatkan!',
+    populer: false
+  },
+  {
+    id: 4, emoji: '🦐', nama: 'Gado-Gado Jakarta',
+    asal: 'DKI Jakarta', kategori: 'Sayuran',
+    waktu: '45 menit', porsi: '4 porsi', tingkat: 'Mudah',
+    deskripsi: 'Salad sayuran rebus dengan siraman saus kacang yang kaya rempah. Makanan sehat favorit orang Indonesia.',
+    bahan: [
+      'Sayuran: bayam, kacang panjang, tauge, kentang, ketimun',
+      'Tahu dan tempe goreng', '4 butir telur rebus',
+      'Kerupuk udang dan emping',
+      'Saus kacang: 250 g kacang tanah goreng, 3 cabai merah, 3 bawang putih, 2 sdm kecap manis, air asam jawa, garam, gula merah'
+    ],
+    langkah: [
+      'Rebus masing-masing sayuran hingga matang tetapi masih renyah.',
+      'Goreng tahu dan tempe hingga kecoklatan, tiriskan.',
+      'Untuk saus: haluskan kacang tanah, cabai, dan bawang putih.',
+      'Masak bumbu kacang dengan sedikit air hingga kental, tambahkan kecap manis, asam jawa, garam, dan gula.',
+      'Tata sayuran, tahu, tempe, dan telur di piring saji.',
+      'Siram dengan saus kacang panas di atasnya.',
+      'Sajikan dengan kerupuk dan emping.'
+    ],
+    tips: '💡 Tips: Saus kacang gado-gado paling enak dibuat dari kacang tanah yang baru digoreng dan masih hangat. Gunakan cobek/blender sesuai selera.',
+    populer: true
+  },
+  {
+    id: 5, emoji: '🍱', nama: 'Nasi Liwet Solo',
+    asal: 'Jawa Tengah', kategori: 'Nasi',
+    waktu: '1 jam', porsi: '4 porsi', tingkat: 'Menengah',
+    deskripsi: 'Nasi gurih yang dimasak dengan santan dan rempah, disajikan dengan opor ayam, areh, dan lauk-pauk lainnya.',
+    bahan: [
+      '500 g beras, cuci bersih',
+      '400 ml santan', '600 ml air',
+      '3 lembar daun salam', '2 batang serai, geprek',
+      '3 lembar daun pandan', 'Garam secukupnya',
+      'Pelengkap: opor ayam, telur pindang, sambal goreng ati, areh (santan kental berbumbu)'
+    ],
+    langkah: [
+      'Masak beras dengan santan, air, daun salam, serai, dan pandan dalam rice cooker atau dandang.',
+      'Tambahkan garam, aduk rata sebelum menutup rice cooker.',
+      'Masak hingga nasi matang dan pulen.',
+      'Untuk areh: masak santan kental dengan bumbu (bawang putih, kemiri) hingga mengental seperti saus.',
+      'Sajikan nasi liwet di atas pincuk daun pisang.',
+      'Tambahkan opor ayam, telur pindang, sambal goreng, dan siram dengan areh.',
+      'Nikmati selagi hangat.'
+    ],
+    tips: '💡 Tips: Nasi liwet Solo paling autentik disajikan di atas daun pisang sebagai pincuk. Arehnya adalah kunci yang membedakan nasi liwet Solo!',
+    populer: false
+  },
+  {
+    id: 6, emoji: '🍜', nama: 'Mie Aceh',
+    asal: 'Aceh', kategori: 'Mi',
+    waktu: '1 jam', porsi: '2 porsi', tingkat: 'Menengah',
+    deskripsi: 'Mi tebal dengan kuah rempah kaya yang pedas dan gurih, ditambah daging sapi atau udang serta emping.',
+    bahan: [
+      '200 g mi Aceh (mi kuning tebal)',
+      '150 g daging sapi suwir atau udang',
+      'Bumbu halus: 8 cabai merah, 4 bawang merah, 3 bawang putih, 2 cm kunyit, 2 cm jahe, 3 cm kayu manis',
+      '2 buah tomat, potong', '1 sdm kari bubuk',
+      '200 ml kaldu sapi', 'Pelengkap: emping, acar, bawang goreng'
+    ],
+    langkah: [
+      'Tumis bumbu halus hingga harum dan matang, sekitar 10 menit.',
+      'Masukkan daging/udang, tumis hingga berubah warna.',
+      'Tambahkan kari bubuk dan tomat, aduk rata.',
+      'Tuang kaldu sapi, masak hingga mendidih.',
+      'Masukkan mi yang sudah direbus setengah matang.',
+      'Aduk rata, masak hingga kuah terserap dan mi matang.',
+      'Sajikan dengan emping, acar bawang, dan bawang goreng.'
+    ],
+    tips: '💡 Tips: Mie Aceh bisa disajikan goreng (tumis), basah (sedikit kuah), atau kuah (berkuah banyak). Sesuaikan dengan selera Anda!',
+    populer: true
+  },
+  {
+    id: 7, emoji: '🦆', nama: 'Bebek Goreng Madura',
+    asal: 'Jawa Timur (Madura)', kategori: 'Unggas',
+    waktu: '2,5 jam', porsi: '4 porsi', tingkat: 'Menengah',
+    deskripsi: 'Bebek yang diungkep dengan rempah-rempah lalu digoreng hingga renyah kecoklatan. Sajian ikonik khas Madura.',
+    bahan: [
+      '1 ekor bebek, potong 4 bagian',
+      'Bumbu ungkep: 8 bawang merah, 5 bawang putih, 3 cm jahe, 3 cm lengkuas, 2 cm kunyit, 1 sdm ketumbar, garam',
+      '2 lembar daun salam', '2 batang serai',
+      'Minyak goreng secukupnya',
+      'Sambal pencit: mangga muda, cabai, terasi, garam, gula'
+    ],
+    langkah: [
+      'Lumuri bebek dengan bumbu halus, diamkan minimal 2 jam.',
+      'Ungkep bebek dengan daun salam, serai, dan sedikit air selama 1 jam hingga empuk.',
+      'Tiriskan bebek, biarkan sedikit kering.',
+      'Panaskan banyak minyak, goreng bebek dengan api sedang.',
+      'Goreng hingga kulit renyah dan berwarna kecoklatan keemasan (±20 menit).',
+      'Tiriskan dari minyak.',
+      'Sajikan dengan nasi, sambal pencit, dan lalapan.'
+    ],
+    tips: '💡 Tips: Proses pengungkepan sangat penting agar bebek empuk. Jangan terburu-buru, semakin lama diungkep semakin enak!',
+    populer: false
+  },
+  {
+    id: 8, emoji: '🍡', nama: 'Klepon',
+    asal: 'Jawa', kategori: 'Kue Tradisional',
+    waktu: '45 menit', porsi: '30 buah', tingkat: 'Mudah',
+    deskripsi: 'Kue bola hijau dari tepung ketan berisi gula merah cair, dibalut kelapa parut segar. Jajanan pasar favorit semua usia.',
+    bahan: [
+      '300 g tepung ketan', '200 ml air pandan (pandan + air diblender)',
+      '150 g gula merah, serut halus', 'Sedikit garam',
+      'Balutan: 200 g kelapa parut muda segar, sedikit garam, kukus 5 menit'
+    ],
+    langkah: [
+      'Campur tepung ketan dengan sedikit garam, tuang air pandan sedikit demi sedikit sambil diuleni.',
+      'Uleni hingga kalis dan tidak lengket di tangan.',
+      'Ambil adonan ±20 g, pipihkan, beri serutan gula merah di tengah.',
+      'Bulatkan hingga isian tertutup rapat.',
+      'Didihkan air, rebus klepon hingga mengapung (±5 menit).',
+      'Angkat dan tiriskan sebentar.',
+      'Gulingkan klepon di atas kelapa parut hingga merata. Sajikan.'
+    ],
+    tips: '💡 Tips: Pastikan adonan klepon ditutup rapat agar gula merah tidak bocor saat direbus. Gunakan gula merah berkualitas baik untuk isian yang mengalir!',
+    populer: true
+  },
+  {
+    id: 9, emoji: '🥩', nama: 'Rawon Surabaya',
+    asal: 'Jawa Timur', kategori: 'Sup',
+    waktu: '2 jam', porsi: '6 porsi', tingkat: 'Menengah',
+    deskripsi: 'Sup daging sapi berkuah hitam pekat dari kluwek, rempah nusantara yang memberi rasa unik dan dalam.',
+    bahan: [
+      '700 g daging sapi (sengkel/sandung lamur)',
+      '3 biji kluwek, ambil isinya dan rendam air panas',
+      'Bumbu halus: 6 bawang merah, 4 bawang putih, 3 cm jahe, 3 cm lengkuas, 2 cm kunyit, 3 kemiri',
+      '2 batang serai', '3 lembar daun jeruk',
+      '2 liter air', 'Garam dan gula secukupnya',
+      'Pelengkap: tauge pendek, telur asin, sambal terasi, kerupuk'
+    ],
+    langkah: [
+      'Rebus daging sapi hingga empuk, angkat dan potong dadu, saring kaldunya.',
+      'Tumis bumbu halus bersama serai dan daun jeruk hingga harum dan matang.',
+      'Larutkan isi kluwek dengan sedikit kaldu, saring.',
+      'Masukkan tumisan bumbu dan larutan kluwek ke dalam kaldu.',
+      'Masak kuah hingga mendidih, tambahkan daging.',
+      'Masak 20 menit, koreksi rasa dengan garam dan gula.',
+      'Sajikan dengan tauge, telur asin, sambal terasi, dan kerupuk.'
+    ],
+    tips: '💡 Tips: Kunci rawon ada pada kluwek yang berkualitas — pilih yang sudah tua dan rasanya tidak pahit. Rendam dalam air panas sebelum digunakan.',
+    populer: true
+  },
+  {
+    id: 10, emoji: '🫔', nama: 'Pempek Palembang',
+    asal: 'Sumatera Selatan', kategori: 'Ikan',
+    waktu: '1,5 jam', porsi: '20 buah', tingkat: 'Menengah',
+    deskripsi: 'Olahan ikan tenggiri dengan tepung sagu yang kenyal, disajikan dengan kuah cuko asam-manis-pedas yang khas.',
+    bahan: [
+      '500 g ikan tenggiri, haluskan',
+      '400 g tepung sagu', '1 butir telur',
+      '200 ml air', 'Garam, kaldu bubuk',
+      'Cuko: 500 g gula merah, 3 sdm cuka, 10 cabai rawit, 5 bawang putih goreng, garam, air 500 ml',
+      'Pelengkap: mie kuning, timun, ebi'
+    ],
+    langkah: [
+      'Campur ikan halus dengan garam, telur, dan air, aduk rata.',
+      'Tambahkan tepung sagu sedikit demi sedikit, uleni hingga kalis.',
+      'Bentuk adonan menjadi kapal selam (lenjer), masukkan telur rebus atau isian lain.',
+      'Rebus dalam air mendidih hingga mengapung, angkat.',
+      'Goreng pempek hingga kulit kecoklatan dan renyah.',
+      'Buat cuko: rebus semua bahan cuko hingga mendidih dan mengental.',
+      'Sajikan pempek goreng dengan cuko, mi, dan timun.'
+    ],
+    tips: '💡 Tips: Ikan tenggiri segar adalah kunci pempek yang enak. Haluskan ikan dalam kondisi segar dan dingin agar tekstur lebih kenyal.',
+    populer: true
+  },
+  {
+    id: 11, emoji: '🍚', nama: 'Nasi Goreng Kampung',
+    asal: 'Seluruh Indonesia', kategori: 'Nasi',
+    waktu: '20 menit', porsi: '2 porsi', tingkat: 'Mudah',
+    deskripsi: 'Versi sederhana nan lezat nasi goreng ala kampung dengan bumbu tradisional, telur, dan kecap manis.',
+    bahan: [
+      '2 piring nasi putih (sebaiknya nasi kemarin)',
+      '2 butir telur ayam', '3 siung bawang merah, iris',
+      '2 siung bawang putih, iris', '3 cabai merah keriting',
+      '2 sdm kecap manis', '1 sdm saus tiram',
+      'Garam dan merica secukupnya', 'Minyak goreng',
+      'Pelengkap: timun, tomat, kerupuk, acar'
+    ],
+    langkah: [
+      'Panaskan minyak, tumis bawang merah dan bawang putih hingga harum.',
+      'Masukkan cabai, tumis sebentar.',
+      'Masukkan telur, orak-arik setengah matang.',
+      'Masukkan nasi, aduk rata dengan bumbu.',
+      'Tambahkan kecap manis dan saus tiram, aduk terus dengan api besar.',
+      'Bumbui dengan garam dan merica, koreksi rasa.',
+      'Sajikan dengan pelengkap dan kerupuk.'
+    ],
+    tips: '💡 Tips: Gunakan nasi sisa dari hari sebelumnya agar butiran nasinya terpisah dan tidak menggumpal. Api besar adalah rahasia nasi goreng resto!',
+    populer: true
+  },
+  {
+    id: 12, emoji: '🌿', nama: 'Sayur Lodeh',
+    asal: 'Jawa Tengah', kategori: 'Sayuran',
+    waktu: '40 menit', porsi: '4 porsi', tingkat: 'Mudah',
+    deskripsi: 'Sayur berkuah santan dengan berbagai sayuran segar dan labu, bumbu sederhana namun gurih dan mengenyangkan.',
+    bahan: [
+      '300 g labu siam, potong dadu',
+      '200 g kacang panjang, potong',
+      '150 g terong ungu', '100 g jagung manis',
+      '800 ml santan encer', '200 ml santan kental',
+      'Bumbu halus: 5 bawang merah, 3 bawang putih, 3 cm lengkuas, 3 kemiri, ½ sdt ketumbar',
+      '2 lembar daun salam', '1 lembar daun kunyit', 'Garam, gula'
+    ],
+    langkah: [
+      'Tumis bumbu halus bersama daun salam dan daun kunyit hingga harum.',
+      'Tuang santan encer, masak hingga mendidih.',
+      'Masukkan jagung dan labu siam, masak 10 menit.',
+      'Tambahkan kacang panjang dan terong.',
+      'Tuang santan kental, aduk perlahan jangan sampai santan pecah.',
+      'Masak dengan api kecil hingga sayuran empuk.',
+      'Koreksi rasa, sajikan hangat dengan nasi dan lauk lain.'
+    ],
+    tips: '💡 Tips: Aduk santan kental terus-menerus dengan arah yang sama agar tidak pecah. Matikan api segera setelah mendidih untuk menjaga santan tetap mulus.',
+    populer: false
+  },
+];
+
+const KATEGORI = ['Semua', ...new Set(DATA_RESEP.map(r => r.kategori))];
+let kategoriAktif = 'Semua';
+let queryCaripat = '';
+
+function init() {
+  document.getElementById('jmlResep').textContent = DATA_RESEP.length;
+  renderFilter();
+  renderGrid();
+}
+
+function renderFilter() {
+  const bar = document.getElementById('filterBar');
+  bar.innerHTML = KATEGORI.map(k =>
+    `<button class="chip ${k === kategoriAktif ? 'aktif' : ''}" onclick="pilihKategori('${k}')">${k}</button>`
+  ).join('');
+}
+
+function pilihKategori(k) {
+  kategoriAktif = k;
+  renderFilter();
+  renderGrid();
+  const judul = document.getElementById('sectionTitle');
+  judul.textContent = k === 'Semua' ? '🍛 Semua Resep' : `📂 ${k}`;
+}
+
+function cariResep() {
+  queryCaripat = document.getElementById('inputCari').value.toLowerCase();
+  renderGrid();
+}
+
+function resepTerfilter() {
+  return DATA_RESEP.filter(r => {
+    const cocokKategori = kategoriAktif === 'Semua' || r.kategori === kategoriAktif;
+    const cocokCari = !queryCaripat ||
+      r.nama.toLowerCase().includes(queryCaripat) ||
+      r.asal.toLowerCase().includes(queryCaripat) ||
+      r.deskripsi.toLowerCase().includes(queryCaripat);
+    return cocokKategori && cocokCari;
+  });
+}
+
+function renderGrid() {
+  const grid = document.getElementById('gridResep');
+  const kosong = document.getElementById('kosong');
+  const daftar = resepTerfilter();
+
+  if (daftar.length === 0) {
+    grid.innerHTML = '';
+    kosong.style.display = 'block';
+    return;
+  }
+  kosong.style.display = 'none';
+  grid.innerHTML = daftar.map(r => `
+    <div class="card" onclick="bukaModal(${r.id})">
+      <div class="card-img">
+        ${r.emoji}
+        ${r.populer ? '<span class="card-badge">⭐ Populer</span>' : ''}
+        <button class="card-fav" onclick="event.stopPropagation(); toggleFav(this)" title="Simpan ke favorit">🤍</button>
+      </div>
+      <div class="card-body">
+        <div class="card-region">📍 ${r.asal}</div>
+        <div class="card-title">${r.nama}</div>
+        <div class="card-desc">${r.deskripsi}</div>
+        <div class="card-meta">
+          <span class="meta-item">⏱ ${r.waktu}</span>
+          <span class="meta-item">🍽 ${r.porsi}</span>
+          <span class="meta-item">📊 ${r.tingkat}</span>
+        </div>
+        <div class="card-footer">
+          <button class="btn-lihat" onclick="event.stopPropagation(); bukaModal(${r.id})">Lihat Resep</button>
+          <button class="btn-share" onclick="event.stopPropagation(); bagikan('${r.nama}')" title="Bagikan">🔗</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleFav(btn) {
+  btn.textContent = btn.textContent === '🤍' ? '❤️' : '🤍';
+}
+
+function bagikan(nama) {
+  if (navigator.share) {
+    navigator.share({ title: nama, text: `Cek resep ${nama} di Dapur Nusantara!` });
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => alert('Link telah disalin!'));
+  }
+}
+
+function bukaModal(id) {
+  const r = DATA_RESEP.find(x => x.id === id);
+  if (!r) return;
+
+  document.getElementById('mEmoji').textContent = r.emoji;
+  document.getElementById('mRegion').textContent = `📍 ${r.asal} · ${r.kategori}`;
+  document.getElementById('mTitle').textContent = r.nama;
+  document.getElementById('mDesc').textContent = r.deskripsi;
+  document.getElementById('mBadges').innerHTML = `
+    <span class="badge merah">⏱ ${r.waktu}</span>
+    <span class="badge hijau">🍽 ${r.porsi}</span>
+    <span class="badge emas">📊 ${r.tingkat}</span>
+  `;
+  document.getElementById('mBahan').innerHTML = r.bahan.map(b => `<li>${b}</li>`).join('');
+  document.getElementById('mLangkah').innerHTML = r.langkah.map(l => `<li>${l}</li>`).join('');
+  document.getElementById('mTips').innerHTML = r.tips;
+
+  document.getElementById('overlay').classList.add('buka');
+  document.body.style.overflow = 'hidden';
+}
+
+function tutupModal(e) {
+  if (!e || e.target === document.getElementById('overlay')) {
+    document.getElementById('overlay').classList.remove('buka');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') tutupModal(); });
+
+init();
+</script>
+</body>
+</html>

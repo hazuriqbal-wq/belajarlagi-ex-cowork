@@ -1,0 +1,12 @@
+Expected demo output:
+- Slide 1: Why onboarding improvement matters
+- Slide 2: Current pain points
+- Slide 3: Evidence from cohort metrics
+- Slide 4: Recommended onboarding workflow
+- Slide 5: Implementation plan
+- Slide 6: Leadership decision needed
+
+Hal yang perlu ditunjukkan saat demo:
+- Claude membaca beberapa file sekaligus.
+- Claude menyatukan notes + report + metrics.
+- Claude tidak hanya menulis bullet, tetapi menyusun alur presentasi.

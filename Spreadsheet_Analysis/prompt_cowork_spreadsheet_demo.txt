@@ -1,0 +1,16 @@
+SLIDE 19 DEMO PROMPT - COWORK UNTUK SPREADSHEET
+
+Bertindaklah sebagai business analyst. Review workbook ini untuk manager non-teknis. Fokus pada sheet Sales_Data dan Product_Targets.
+
+Sebelum membuat atau mengubah file apa pun, tampilkan rencana analisis terlebih dahulu.
+
+Setelah rencana disetujui, bantu buat:
+1. ringkasan performa penjualan Juni 2026,
+2. produk dengan revenue tertinggi dan terendah,
+3. region dan channel dengan performa terbaik,
+4. produk atau region yang berada di bawah target,
+5. data quality issue seperti missing value, duplicate invoice, atau angka yang tidak biasa,
+6. saran 3 chart untuk leadership update,
+7. next step praktis untuk manager.
+
+Jangan langsung mengubah workbook. Buat rencana dan daftar output terlebih dahulu.

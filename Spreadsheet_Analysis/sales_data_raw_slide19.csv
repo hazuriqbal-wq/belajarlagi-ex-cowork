@@ -1,0 +1,191 @@
+Date,Invoice_ID,Product,Category,Region,Channel,Units,Discount,Status,Revenue,Target
+2026-06-01,INV-1001,Basic Analytics Pack,Software,Surabaya,Partner,1,0,Cancelled,0,1200000
+2026-06-01,INV-1002,Basic Analytics Pack,Software,Medan,Website,2,0.05,Closed Won,2508000.0,2400000
+2026-06-01,INV-1003,Basic Analytics Pack,Software,Jakarta,Partner,1,0.1,Pending,562464.0,1200000
+2026-06-01,INV-1004,Basic Analytics Pack,Software,Medan,Partner,3,0.15,Cancelled,0,3600000
+2026-06-02,INV-1005,Data Training Seat,Training,Bandung,Referral,2,0,Closed Won,4400000,4000000
+2026-06-02,INV-1006,Pro Dashboard Pack,Software,Bali,Sales Team,1,0,Closed Won,3500000,3000000
+2026-06-02,INV-1007,AI Report Builder,AI Tool,Jakarta,Website,2,0,Closed Won,11200000.0,8400000
+2026-06-02,INV-1008,AI Report Builder,AI Tool,Medan,Sales Team,4,0,Cancelled,,16800000
+2026-06-02,INV-1009,Data Training Seat,Training,Medan,Website,2,0,Pending,1548800.0,4000000
+2026-06-02,INV-1010,AI Report Builder,AI Tool,Medan,Sales Team,2,0,Cancelled,0,8400000
+2026-06-02,INV-1011,Basic Analytics Pack,Software,Jakarta,Partner,4,0,Closed Won,6249600.0,4800000
+2026-06-02,INV-1012,Pro Dashboard Pack,Software,Jakarta,Referral,1,0.05,Cancelled,0,3000000
+2026-06-03,INV-1013,Pro Dashboard Pack,Software,Surabaya,Sales Team,1,0.15,Closed Won,2975000.0,3000000
+2026-06-03,INV-1014,Consulting Hour,Service,Jakarta,Partner,2,0.15,Closed Won,1593648.0,1700000
+2026-06-03,INV-1015,Pro Dashboard Pack,Software,Bali,Referral,1,0.15,Cancelled,0,3000000
+2026-06-03,INV-1016,Premium Support,Service,Bandung,Sales Team,4,0,Closed Won,7200000,6400000
+2026-06-03,INV-1017,Basic Analytics Pack,Software,Surabaya,Referral,1,0,Closed Won,1500000,1200000
+2026-06-03,INV-1018,Premium Support,Service,Surabaya,Partner,3,0.05,Closed Won,4770900.0,4800000
+2026-06-04,INV-1019,Pro Dashboard Pack,Software,Surabaya,Partner,1,0.15,Pending,1106700.0,3000000
+2026-06-04,INV-1020,Premium Support,Service,Surabaya,Referral,2,0.05,Closed Won,3420000.0,3200000
+2026-06-04,INV-1021,Pro Dashboard Pack,Software,Bandung,Referral,1,0,Closed Won,3500000,3000000
+2026-06-04,INV-1021,Pro Dashboard Pack,Software,Bandung,Referral,2,0,Closed Won,7000000,6000000
+2026-06-04,INV-1023,Data Training Seat,Training,Medan,Referral,2,0,Pending,1548800.0,4000000
+2026-06-04,INV-1024,Basic Analytics Pack,Software,Jakarta,Sales Team,4,0.15,Closed Won,5712000.0,4800000
+2026-06-04,INV-1025,Basic Analytics Pack,Software,Surabaya,Referral,1,0.05,Closed Won,1425000.0,1200000
+2026-06-05,INV-1026,Premium Support,Service,Bandung,Website,4,0.15,Closed Won,6120000.0,6400000
+2026-06-05,INV-1027,Consulting Hour,Service,Medan,Partner,1,0,Closed Won,736560.0,850000
+2026-06-05,INV-1028,Premium Support,Service,Medan,Website,2,0,Closed Won,3168000.0,3200000
+2026-06-05,INV-1029,Basic Analytics Pack,Software,Jakarta,Sales Team,4,0,Closed Won,6720000.0,4800000
+2026-06-05,INV-1030,Basic Analytics Pack,Software,Bandung,Website,1,0.15,Closed Won,1275000.0,1200000
+2026-06-05,INV-1031,Basic Analytics Pack,Software,Medan,Partner,1,0.15,Closed Won,1043460.0,1200000
+2026-06-06,INV-1032,Pro Dashboard Pack,Software,Surabaya,Referral,1,0.1,Cancelled,0,3000000
+2026-06-06,INV-1033,Consulting Hour,Service,Bandung,Sales Team,2,0.15,Cancelled,0,1700000
+2026-06-06,INV-1034,AI Report Builder,AI Tool,Bali,Referral,1,0,Closed Won,5000000,4200000
+2026-06-06,INV-1035,Basic Analytics Pack,Software,Surabaya,Website,2,0.1,Closed Won,2700000.0,2400000
+2026-06-06,INV-1036,Premium Support,Service,Bandung,Website,1,0.15,Cancelled,0,1600000
+2026-06-06,INV-1037,Basic Analytics Pack,Software,Bandung,Website,1,0,Closed Won,1500000,1200000
+2026-06-06,INV-1038,Premium Support,Service,Bandung,Sales Team,3,0.05,Closed Won,5130000.0,4800000
+2026-06-06,INV-1039,Premium Support,Service,Bandung,Referral,1,0.05,Closed Won,1710000.0,1600000
+2026-06-07,INV-1040,Basic Analytics Pack,Software,Jakarta,Referral,1,0.05,Closed Won,1596000.0,1200000
+2026-06-07,INV-1041,Data Training Seat,Training,Jakarta,Website,1,0.05,Cancelled,0,2000000
+2026-06-07,INV-1042,AI Report Builder,AI Tool,Jakarta,Partner,1,0,Pending,2083200.0,4200000
+2026-06-07,INV-1043,Data Training Seat,Training,Bandung,Referral,1,0,Closed Won,2200000,2000000
+2026-06-07,INV-1044,Pro Dashboard Pack,Software,Jakarta,Referral,4,0.1,Closed Won,14112000.0,12000000
+2026-06-08,INV-1045,Consulting Hour,Service,Medan,Website,1,0,Closed Won,792000.0,850000
+2026-06-08,INV-1046,Data Training Seat,Training,Bali,Referral,1,0.05,Closed Won,2090000.0,2000000
+2026-06-08,INV-1047,Pro Dashboard Pack,Software,Bali,Website,2,0,Closed Won,7000000,6000000
+2026-06-08,INV-1048,AI Report Builder,AI Tool,Bali,Referral,1,0,Closed Won,5000000,4200000
+2026-06-09,INV-1049,Basic Analytics Pack,Software,Medan,Website,3,0,Closed Won,3960000.0,3600000
+2026-06-09,INV-1050,Basic Analytics Pack,Software,Medan,Referral,2,0.1,Closed Won,2376000.0,2400000
+2026-06-09,INV-1051,Basic Analytics Pack,Software,Medan,Website,4,0,Closed Won,5280000.0,4800000
+2026-06-09,INV-1052,Premium Support,Service,Jakarta,Partner,2,0,Pending,1499904.0,3200000
+2026-06-09,INV-1053,Pro Dashboard Pack,Software,Medan,Website,2,0,Closed Won,6160000.0,6000000
+2026-06-10,INV-1054,Premium Support,Service,Medan,Sales Team,1,0,Cancelled,0,1600000
+2026-06-10,INV-1055,Consulting Hour,Service,Surabaya,Partner,1,0.05,Closed Won,795150.0,850000
+2026-06-10,INV-1056,Consulting Hour,Service,Surabaya,Referral,15,0,Closed Won,900000,850000
+2026-06-10,INV-1057,Data Training Seat,Training,Medan,Website,1,0.1,Closed Won,1742400.0,2000000
+2026-06-10,INV-1058,Premium Support,Service,Surabaya,Partner,1,0,Closed Won,1674000.0,1600000
+2026-06-10,INV-1059,AI Report Builder,AI Tool,Surabaya,Partner,2,0.1,Cancelled,0,8400000
+2026-06-10,INV-1060,AI Report Builder,AI Tool,Medan,Website,3,0.1,Closed Won,11880000.0,12600000
+2026-06-10,INV-1061,Consulting Hour,Service,Jakarta,Partner,1,0,Closed Won,937440.0,850000
+2026-06-11,INV-1062,Pro Dashboard Pack,Software,Surabaya,Sales Team,2,0,Cancelled,0,6000000
+2026-06-11,INV-1063,AI Report Builder,AI Tool,Bandung,Sales Team,2,0.05,Closed Won,9500000.0,8400000
+2026-06-11,INV-1064,Basic Analytics Pack,Software,Jakarta,Referral,4,0,Closed Won,6720000.0,4800000
+2026-06-11,INV-1065,Basic Analytics Pack,Software,Surabaya,Partner,3,0,Closed Won,4185000.0,3600000
+2026-06-11,INV-1066,Consulting Hour,Service,Bali,Referral,2,0,Closed Won,1800000,1700000
+2026-06-11,INV-1067,Basic Analytics Pack,Software,Bandung,Website,4,0,Pending,2400000.0,4800000
+2026-06-11,INV-1068,Premium Support,Service,Bandung,Referral,1,0,Closed Won,1800000,1600000
+2026-06-11,INV-1069,AI Report Builder,AI Tool,Jakarta,Sales Team,1,0.15,Closed Won,4760000.0,4200000
+2026-06-12,INV-1070,AI Report Builder,AI Tool,Medan,Referral,2,0.15,Closed Won,7480000.0,8400000
+2026-06-12,INV-1071,Pro Dashboard Pack,Software,Bandung,Partner,2,0,Closed Won,6510000.0,6000000
+2026-06-12,INV-1072,Consulting Hour,Service,Surabaya,Referral,4,0.15,Cancelled,0,3400000
+2026-06-12,INV-1073,Pro Dashboard Pack,Software,Surabaya,Partner,4,0.15,Closed Won,11067000.0,12000000
+2026-06-13,INV-1074,Basic Analytics Pack,Software,Bali,Partner,1,0.05,Closed Won,1325250.0,1200000
+2026-06-13,INV-1075,AI Report Builder,AI Tool,Bandung,Partner,1,0.15,Closed Won,3952500.0,4200000
+2026-06-13,INV-1076,Data Training Seat,Training,Surabaya,Sales Team,4,0,Closed Won,8800000,8000000
+2026-06-13,INV-1077,AI Report Builder,AI Tool,Medan,Referral,3,0.1,Closed Won,11880000.0,12600000
+2026-06-13,INV-1078,Basic Analytics Pack,Software,Jakarta,Sales Team,1,0.1,Closed Won,1512000.0,1200000
+2026-06-13,INV-1079,Basic Analytics Pack,Software,Jakarta,Referral,1,0.15,Closed Won,1428000.0,1200000
+2026-06-13,INV-1080,Data Training Seat,Training,Medan,Website,2,0.1,Closed Won,3484800.0,4000000
+2026-06-14,INV-1081,Basic Analytics Pack,Software,Bali,Website,2,0.1,Cancelled,0,2400000
+2026-06-14,INV-1082,Consulting Hour,Service,Bandung,Sales Team,2,0,Cancelled,0,1700000
+2026-06-14,INV-1083,AI Report Builder,AI Tool,Medan,Sales Team,3,0,Cancelled,0,12600000
+2026-06-14,INV-1084,AI Report Builder,AI Tool,Medan,Sales Team,3,0.05,Closed Won,12540000.0,12600000
+2026-06-14,INV-1085,Data Training Seat,Training,Surabaya,Partner,1,0.05,Cancelled,0,2000000
+2026-06-14,INV-1086,Data Training Seat,Training,Bandung,Sales Team,2,0.1,Closed Won,3960000.0,4000000
+2026-06-15,INV-1087,AI Report Builder,AI Tool,Bandung,Referral,4,0.1,Pending,7200000.0,16800000
+2026-06-15,INV-1088,Consulting Hour,Service,Surabaya,Referral,2,0.05,Cancelled,0,1700000
+2026-06-15,INV-1089,Pro Dashboard Pack,Software,Medan,Referral,4,0.15,Closed Won,10472000.0,12000000
+2026-06-15,INV-1090,Consulting Hour,Service,Jakarta,Sales Team,2,0.15,Cancelled,0,1700000
+2026-06-15,INV-1091,Premium Support,Service,Surabaya,Website,4,0,Cancelled,0,6400000
+2026-06-15,INV-1092,AI Report Builder,AI Tool,Bandung,Partner,1,0,Closed Won,4650000.0,4200000
+2026-06-16,INV-1093,Data Training Seat,Training,Medan,Website,2,0.05,Cancelled,0,4000000
+2026-06-16,INV-1094,Premium Support,Service,Bandung,Referral,2,0.05,Closed Won,3420000.0,3200000
+2026-06-16,INV-1095,Pro Dashboard Pack,Software,Jakarta,Website,4,0.05,Closed Won,14896000.0,12000000
+2026-06-16,INV-1096,Pro Dashboard Pack,Software,Medan,Referral,1,0.1,Closed Won,2772000.0,3000000
+2026-06-16,INV-1097,Basic Analytics Pack,Software,Bali,Partner,4,0.05,Cancelled,0,4800000
+2026-06-17,INV-1098,Premium Support,Service,Medan,Sales Team,4,0.05,Pending,2407680.0,6400000
+2026-06-17,INV-1099,Consulting Hour,Service,Medan,Referral,4,0.1,Closed Won,2851200.0,3400000
+2026-06-17,INV-1100,Pro Dashboard Pack,Software,Bali,Referral,1,0,Cancelled,0,3000000
+2026-06-17,INV-1101,AI Report Builder,AI Tool,Medan,Referral,3,0,Closed Won,13200000.0,12600000
+2026-06-17,INV-1102,Data Training Seat,Training,Jakarta,Sales Team,1,0,Closed Won,2464000.0,2000000
+2026-06-17,INV-1103,AI Report Builder,AI Tool,Medan,Website,1,0.45,Closed Won,4400000.0,4200000
+2026-06-17,INV-1104,Data Training Seat,Training,Bandung,Partner,1,0.05,Closed Won,1943700.0,2000000
+2026-06-17,INV-1105,AI Report Builder,AI Tool,Medan,Referral,2,0,Closed Won,8800000.0,8400000
+2026-06-18,INV-1106,Data Training Seat,Training,Medan,Website,4,0.1,Closed Won,6969600.0,8000000
+2026-06-18,INV-1107,Data Training Seat,Training,Jakarta,Sales Team,1,0.05,Closed Won,2340800.0,2000000
+2026-06-18,INV-1108,Premium Support,Service,Medan,Partner,2,0,Closed Won,2946240.0,3200000
+2026-06-18,INV-1109,Data Training Seat,Training,Bali,Website,2,0,Cancelled,0,4000000
+2026-06-18,INV-1110,Consulting Hour,Service,Bali,Partner,4,0.05,Closed Won,3180600.0,3400000
+2026-06-18,INV-1111,Premium Support,Service,Medan,Website,2,0.1,Pending,1140480.0,3200000
+2026-06-18,INV-1112,Consulting Hour,Service,Jakarta,Website,3,0.05,Closed Won,2872800.0,2550000
+2026-06-19,INV-1113,Pro Dashboard Pack,Software,Jakarta,Sales Team,2,0,Closed Won,7840000.0,6000000
+2026-06-19,INV-1114,Data Training Seat,Training,Surabaya,Sales Team,4,0.05,Closed Won,8360000.0,8000000
+2026-06-19,INV-1115,Data Training Seat,Training,Surabaya,Website,2,0,Cancelled,0,4000000
+2026-06-19,INV-1116,Premium Support,Service,Jakarta,Sales Team,1,0.15,Closed Won,1713600.0,1600000
+2026-06-19,INV-1117,Consulting Hour,Service,Jakarta,Website,1,0,Closed Won,1008000.0,850000
+2026-06-19,INV-1118,Premium Support,Service,Bandung,Partner,1,0.05,Cancelled,0,1600000
+2026-06-19,INV-1119,Basic Analytics Pack,Software,Medan,Partner,2,0.15,Closed Won,2086920.0,2400000
+2026-06-20,INV-1120,Pro Dashboard Pack,Software,Medan,Website,4,0,Closed Won,12320000.0,12000000
+2026-06-20,INV-1121,Basic Analytics Pack,Software,Medan,Website,1,0.1,Cancelled,0,1200000
+2026-06-20,INV-1122,Data Training Seat,Training,Bali,Partner,1,0.1,Cancelled,0,2000000
+2026-06-20,INV-1123,Consulting Hour,Service,Bandung,Website,3,0,Cancelled,0,2550000
+2026-06-20,INV-1124,Premium Support,Service,Jakarta,Website,1,0.1,Closed Won,1814400.0,1600000
+2026-06-20,INV-1125,Consulting Hour,Service,Surabaya,Website,2,0.15,Closed Won,1530000.0,1700000
+2026-06-21,INV-1126,Data Training Seat,Training,Bali,Website,2,0,Cancelled,0,4000000
+2026-06-21,INV-1127,Data Training Seat,Training,Bandung,Referral,1,0.15,Pending,748000.0,2000000
+2026-06-21,INV-1128,Consulting Hour,Service,Surabaya,Referral,2,0.05,Cancelled,0,1700000
+2026-06-21,INV-1129,Premium Support,Service,Surabaya,Sales Team,4,0,Closed Won,7200000,6400000
+2026-06-22,INV-1130,Data Training Seat,Training,Bandung,Referral,2,0.1,Cancelled,0,4000000
+2026-06-22,INV-1131,Data Training Seat,Training,Surabaya,Website,2,0,Closed Won,4400000,4000000
+2026-06-22,INV-1132,Data Training Seat,Training,Bandung,Sales Team,4,0,Closed Won,8800000,8000000
+2026-06-22,INV-1133,AI Report Builder,AI Tool,Medan,Sales Team,2,0,Pending,3520000.0,8400000
+2026-06-22,INV-1134,Pro Dashboard Pack,Software,Jakarta,Partner,3,0.05,Closed Won,10389960.0,9000000
+2026-06-22,INV-1135,Premium Support,Service,Bandung,Referral,3,0.15,Closed Won,4590000.0,4800000
+2026-06-23,INV-1136,Basic Analytics Pack,Software,Jakarta,Sales Team,1,0.05,Cancelled,0,1200000
+2026-06-23,INV-1137,Pro Dashboard Pack,Software,Surabaya,Sales Team,2,0.1,Pending,2520000.0,6000000
+2026-06-23,INV-1138,AI Report Builder,AI Tool,Bali,Sales Team,1,0.15,Closed Won,4250000.0,4200000
+2026-06-23,INV-1139,AI Report Builder,AI Tool,Surabaya,Sales Team,1,0,Cancelled,0,4200000
+2026-06-23,INV-1140,Pro Dashboard Pack,Software,Surabaya,Website,3,0.1,Cancelled,0,9000000
+2026-06-23,INV-1141,Pro Dashboard Pack,Software,Bandung,Partner,3,0.05,Closed Won,9276750.0,9000000
+2026-06-23,INV-1142,Consulting Hour,Service,Medan,Sales Team,1,0,Closed Won,792000.0,850000
+2026-06-24,INV-1143,AI Report Builder,AI Tool,Bandung,Sales Team,1,0.15,Pending,1700000.0,4200000
+2026-06-24,INV-1144,Pro Dashboard Pack,Software,Surabaya,Website,1,0.1,Closed Won,3150000.0,3000000
+2026-06-24,INV-1145,Consulting Hour,Service,Bandung,Referral,1,0,Pending,360000.0,850000
+2026-06-24,INV-1146,AI Report Builder,AI Tool,Bali,Referral,2,0,Closed Won,10000000,8400000
+2026-06-24,INV-1147,Basic Analytics Pack,Software,Surabaya,Referral,1,0,Closed Won,1500000,1200000
+2026-06-25,INV-1148,Basic Analytics Pack,Software,Medan,Website,1,0,Pending,528000.0,1200000
+2026-06-25,INV-1149,AI Report Builder,AI Tool,Jakarta,Partner,1,0.1,Closed Won,4687200.0,4200000
+2026-06-25,INV-1150,Premium Support,Service,Medan,Partner,4,0.1,Closed Won,5303232.0,6400000
+2026-06-25,INV-1151,Data Training Seat,Training,Bali,Sales Team,4,0.1,Closed Won,7920000.0,8000000
+2026-06-25,INV-1152,AI Report Builder,AI Tool,Medan,Website,2,0.15,Closed Won,7480000.0,8400000
+2026-06-25,INV-1153,Pro Dashboard Pack,Software,Bandung,Sales Team,3,0,Closed Won,10500000,9000000
+2026-06-25,INV-1154,Pro Dashboard Pack,Software,Bandung,Website,1,0,Closed Won,3500000,3000000
+2026-06-26,INV-1155,Consulting Hour,Service,Medan,Referral,1,0,Closed Won,792000.0,850000
+2026-06-26,INV-1156,AI Report Builder,AI Tool,Surabaya,Referral,1,0.15,Closed Won,4250000.0,4200000
+2026-06-26,INV-1157,AI Report Builder,AI Tool,Medan,Partner,2,0,Pending,3273600.0,8400000
+2026-06-26,INV-1158,Pro Dashboard Pack,Software,Bandung,Sales Team,4,0,Closed Won,14000000,12000000
+2026-06-26,INV-1159,Basic Analytics Pack,Software,Bandung,Sales Team,2,0.15,Pending,1020000.0,2400000
+2026-06-26,INV-1160,AI Report Builder,AI Tool,Bali,Website,2,0.15,Closed Won,8500000.0,8400000
+2026-06-26,INV-1161,Consulting Hour,Service,Bali,Sales Team,2,0.1,Closed Won,1620000.0,1700000
+2026-06-27,INV-1162,Basic Analytics Pack,Software,Medan,Website,2,0.15,Closed Won,2244000.0,2400000
+2026-06-27,INV-1163,Premium Support,Service,Surabaya,Website,1,0,Cancelled,0,1600000
+2026-06-27,INV-1164,Premium Support,Service,Medan,Website,4,0.15,Closed Won,5385600.0,6400000
+2026-06-27,INV-1165,Premium Support,Service,Jakarta,Partner,2,0.1,Cancelled,0,3200000
+2026-06-27,INV-1166,Data Training Seat,Training,Surabaya,Partner,2,0.05,Cancelled,0,4000000
+2026-06-27,INV-1167,Data Training Seat,Training,Jakarta,Referral,1,0.05,Closed Won,2340800.0,2000000
+2026-06-27,INV-1168,AI Report Builder,AI Tool,Jakarta,Partner,1,0.05,Cancelled,0,4200000
+2026-06-28,INV-1169,AI Report Builder,AI Tool,Bali,Website,2,0,Closed Won,10000000,8400000
+2026-06-28,INV-1170,AI Report Builder,AI Tool,Surabaya,Website,4,0.05,Pending,7600000.0,16800000
+2026-06-28,INV-1171,Basic Analytics Pack,Software,Medan,Referral,2,0,Closed Won,2640000.0,2400000
+2026-06-28,INV-1172,Premium Support,Service,Surabaya,Referral,3,0.05,Closed Won,5130000.0,4800000
+2026-06-28,INV-1173,Pro Dashboard Pack,Software,Surabaya,Partner,1,0.05,Cancelled,0,3000000
+2026-06-28,INV-1174,Data Training Seat,Training,Jakarta,Website,3,0.1,Closed Won,6652800.0,6000000
+2026-06-28,INV-1175,Consulting Hour,Service,Bandung,Sales Team,2,0,Pending,720000.0,1700000
+2026-06-29,INV-1176,Basic Analytics Pack,Software,Bandung,Website,2,0,Cancelled,0,2400000
+2026-06-29,INV-1177,Pro Dashboard Pack,Software,Bali,Sales Team,2,0.15,Closed Won,5950000.0,6000000
+2026-06-29,INV-1178,Data Training Seat,Training,Bali,Referral,1,0.05,Pending,836000.0,2000000
+2026-06-29,INV-1179,Pro Dashboard Pack,Software,Bali,Partner,2,0.1,Cancelled,0,6000000
+2026-06-29,INV-1180,Pro Dashboard Pack,Software,Jakarta,Sales Team,4,0.05,Closed Won,14896000.0,12000000
+2026-06-29,INV-1181,Premium Support,Service,Surabaya,Website,1,0.15,Closed Won,1530000.0,1600000
+2026-06-29,INV-1182,Premium Support,Service,Medan,Referral,4,0,Closed Won,6336000.0,6400000
+2026-06-30,INV-1183,Data Training Seat,Training,Surabaya,Sales Team,2,0.1,Closed Won,3960000.0,4000000
+2026-06-30,INV-1184,Data Training Seat,Training,Surabaya,Partner,3,0,Pending,2455200.0,6000000
+2026-06-30,INV-1185,Data Training Seat,Training,Bandung,Referral,1,0,Cancelled,0,2000000
+2026-06-30,INV-1186,Data Training Seat,Training,Bali,Referral,3,0.15,Closed Won,5610000.0,6000000
+2026-06-30,INV-1187,Data Training Seat,Training,Jakarta,Partner,2,0.1,Closed Won,4124736.0,4000000
+2026-06-30,INV-1188,Basic Analytics Pack,Software,Bali,Website,2,0.05,Closed Won,2850000.0,2400000
+2026-06-30,INV-1189,Consulting Hour,Service,Bandung,Referral,4,0.15,Closed Won,3060000.0,3400000
+2026-06-30,INV-1190,Basic Analytics Pack,Software,Bali,Sales Team,1,0.1,Cancelled,0,1200000

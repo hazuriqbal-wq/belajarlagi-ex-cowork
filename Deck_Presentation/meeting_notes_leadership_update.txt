@@ -1,0 +1,31 @@
+Meeting Notes — Project Onboarding Improvement
+Tanggal: 12 Juni 2026
+Peserta: Head of Operations, Sales Enablement Lead, Customer Success, Product Team
+
+Agenda:
+1. Review proses onboarding peserta baru untuk program Data & AI for Business.
+2. Evaluasi kendala dari cohort terakhir.
+3. Menentukan prioritas improvement untuk bulan depan.
+
+Catatan Diskusi:
+- Tim menemukan bahwa peserta sering bingung pada minggu pertama karena materi pre-read tersebar di beberapa tempat.
+- Reminder kelas sudah dikirim, tetapi belum ada checklist onboarding yang konsisten.
+- Beberapa peserta meminta contoh output yang lebih praktis sebelum sesi live.
+- Tim Customer Success menyarankan satu halaman onboarding guide yang berisi jadwal, link penting, ekspektasi kelas, dan FAQ.
+- Sales Enablement ingin ada slide singkat untuk menjelaskan value program kepada peserta baru.
+- Product Team menyarankan penggunaan template yang dapat dipakai ulang untuk cohort berikutnya.
+
+Keputusan:
+- Buat onboarding checklist standar untuk peserta.
+- Buat 5-6 slide leadership update untuk menyampaikan masalah, insight, dan rekomendasi.
+- Siapkan template komunikasi peserta sebelum kelas dimulai.
+
+Action Items:
+- Operations: menyiapkan daftar dokumen wajib.
+- Customer Success: menyusun FAQ awal.
+- Product Team: menyusun template checklist.
+- Instructor: memberikan contoh output praktik.
+
+Risiko:
+- Jika onboarding tetap tersebar, peserta akan lambat memahami alur kelas.
+- Jika tidak ada standar komunikasi, tim akan mengulang pekerjaan manual setiap cohort.

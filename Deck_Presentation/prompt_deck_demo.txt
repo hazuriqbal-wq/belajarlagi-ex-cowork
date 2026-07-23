@@ -1,0 +1,14 @@
+Bertindaklah sebagai presentation strategist.
+
+Saya ingin membuat leadership update deck dari file meeting notes, draft report, dan data summary di folder ini.
+
+Buat outline 6 slide untuk audience leadership.
+Untuk setiap slide, berikan:
+1. Judul slide
+2. Pesan utama
+3. 3 poin pendukung
+4. Saran visual
+5. Speaker notes singkat
+
+Gunakan bahasa Indonesia profesional.
+Jangan membuat file baru dulu. Tampilkan rencana kerja terlebih dahulu.

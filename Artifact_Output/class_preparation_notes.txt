@@ -1,0 +1,26 @@
+Class Preparation Notes — Claude Cowork Workshop
+
+Tujuan kelas:
+Peserta memahami perbedaan Claude Chat, Claude Cowork, MCP connectors, basic terms, dan Claude Code workflow.
+
+Hal yang perlu disiapkan sebelum kelas:
+- Link kelas online
+- Slide final
+- Folder demo
+- Backup screenshot demo
+- Pre-read material
+- Soal pre/post test
+- Reminder peserta
+- Checklist teknis instruktur
+
+Catatan risiko:
+- Demo live bisa gagal jika internet tidak stabil.
+- Beberapa peserta mungkin belum punya akses Claude Desktop.
+- Perlu backup screenshot untuk setiap demo utama.
+- Jangan menggunakan data asli atau file confidential.
+
+Output yang diinginkan:
+- Checklist persiapan kelas
+- Tabel PIC dan deadline
+- Template pesan reminder peserta
+- Summary singkat untuk tim internal

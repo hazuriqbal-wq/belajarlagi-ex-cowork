@@ -1,0 +1,1 @@
+Placeholder for logo asset. Should probably go to assets folder.

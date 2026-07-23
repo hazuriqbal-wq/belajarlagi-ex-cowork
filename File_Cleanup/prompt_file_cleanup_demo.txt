@@ -1,0 +1,13 @@
+Bertindaklah sebagai project operations assistant.
+
+Review folder messy_project_folder ini dan usulkan struktur folder yang lebih rapi.
+
+Jangan pindahkan, hapus, rename, atau ubah file apa pun sebelum saya menyetujui rencananya.
+
+Tampilkan:
+1. Ringkasan masalah struktur folder saat ini
+2. Usulan folder baru
+3. Aturan naming convention
+4. File yang kemungkinan duplikat
+5. File yang sebaiknya masuk archive
+6. Risiko jika file langsung dipindahkan tanpa review
